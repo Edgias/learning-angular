@@ -231,7 +231,10 @@
         </defs>
       </svg>
       <h1>Hello, {{ title() }}</h1>
-      <div [contentEditable]="isEditable"></div>
+      <section (mouseover)="showSecretMessage()">
+      There's a secret message for you, hover to reveal 👀
+      {{ message }}
+    </section>
       @if(isLoggedIn()){
         <p>Welcome back <app-user />! Your app is running. 🎉</p>
         @for(item of operatingSystems; track item.id){

@@ -14,5 +14,10 @@ export class App {
   protected readonly name = signal<string>('AitaIshe');
   protected readonly isLoggedIn = signal<boolean>(true);
   isEditable: boolean = true;
+  message: string = '';
+
+  showSecretMessage( ) {
+  this.message = 'Way to go 🚀';
+}
 
 }
