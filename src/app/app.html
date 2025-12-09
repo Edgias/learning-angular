@@ -231,7 +231,18 @@
         </defs>
       </svg>
       <h1>Hello, {{ title() }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <div [contentEditable]="isEditable"></div>
+      @if(isLoggedIn()){
+        <p>Welcome back <app-user />! Your app is running. 🎉</p>
+        @for(item of operatingSystems; track item.id){
+          <div class="pill-group">
+            <p>{{ item.id }} ({{ item.name }})</p>
+          </div>
+        }
+      }
+      @else{
+        <p>Please log in to access your dashboard.</p>
+      }
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
