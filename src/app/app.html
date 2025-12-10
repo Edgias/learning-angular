@@ -236,7 +236,7 @@
       {{ message }}
     </section>
       @if(isLoggedIn()){
-        <p>Welcome back <app-user />! Your app is running. 🎉</p>
+        <p>Welcome back <app-user occupation="Chief AI Engineer" /></p>
         @for(item of operatingSystems; track item.id){
           <div class="pill-group">
             <p>{{ item.id }} ({{ item.name }})</p>
